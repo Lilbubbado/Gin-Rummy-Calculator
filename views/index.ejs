@@ -16,22 +16,41 @@
   <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
-        <h2 class="display-5">Player 1</h2>
+        <h2 class="display-2 fw-normal"><%= player1.name %></h2>
       </div>
       <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
         <h2 class="text-dark display-3">Score:</h2>
-        <h1 class="text-dark display-1 fw-bold pt-4 pb-4"><%= p1Score %></h1>
+        <h1 class="text-dark display-1 fw-bold pt-4 pb-4"><%= player1.points %></h1>
         <h2 class="text-dark display-6 pb-3">Rounds Won:</h2>
-        <h1 class="text-dark display-6 fw-bold"><%= p1Rounds %></h1>
+        <h1 class="text-dark display-6 fw-bold"><%= player1.roundsWon %></h1>
+        <form action="/p1-score" method="get">
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-md btn-dark" type="submit">Won Round</button>
+          </div>    
+        </form>
       </div>
     </div>
     <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
+        <h2 class="display-2 fw-normal"><%= player2.name %></h2>
       </div>
-      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+        <h2 class="text-light display-3">Score:</h2>
+        <h1 class="text-light display-1 fw-bold pt-4 pb-4"><%= player2.points %></h1>
+        <h2 class="text-light display-6 pb-3">Rounds Won:</h2>
+        <h1 class="text-light display-6 fw-bold"><%= player2.roundsWon %></h1>
+        <form action="/p2-score" method="get">
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-md btn-light" type="submit">Won Round</button>
+          </div>    
+        </form>
+      </div>
     </div>
+    <form action="/reset" method="post">
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-lg btn-dark fw-medium mt-5" type="submit">Restart Game</button>
+      </div>   
+    </form>
   </div>
 
 
